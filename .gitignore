@@ -1,0 +1,6 @@
+*.dll
+*.pdb
+*.dacpac
+*.suo
+GotLcg/GotLcg.Database.SqlServer/obj/
+GotLcg/GotLcg.Database.SqlServer/bin/
