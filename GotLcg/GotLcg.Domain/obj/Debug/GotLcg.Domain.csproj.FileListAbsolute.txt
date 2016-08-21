@@ -1,4 +1,0 @@
-D:\Projects\GotLcg\GotLcg\GotLcg.Domain\bin\Debug\GotLcg.Domain.dll
-D:\Projects\GotLcg\GotLcg\GotLcg.Domain\bin\Debug\GotLcg.Domain.pdb
-D:\Projects\GotLcg\GotLcg\GotLcg.Domain\obj\Debug\GotLcg.Domain.dll
-D:\Projects\GotLcg\GotLcg\GotLcg.Domain\obj\Debug\GotLcg.Domain.pdb

@@ -4,5 +4,5 @@
 *.suo
 GotLcg/GotLcg.Database.SqlServer/obj/
 GotLcg/GotLcg.Database.SqlServer/bin/
-GotLcg/GotLcg.Enums/obj/
+GotLcg/GotLcg.Domain/obj/
 *.dbmdl
