@@ -63,5 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\User.sql" />
+    <Build Include="Schema\Card.sql" />
+    <Build Include="Schema\CardType.sql" />
+    <Build Include="Schema\ChallengeIcon.sql" />
+    <Build Include="Schema\CardIcon.sql" />
+    <Build Include="Schema\Deck.sql" />
+    <Build Include="Schema\DeckCard.sql" />
+    <Build Include="Schema\UserProfile.sql" />
   </ItemGroup>
 </Project>
