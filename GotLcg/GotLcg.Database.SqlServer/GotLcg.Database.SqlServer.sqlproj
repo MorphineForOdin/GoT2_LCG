@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{52d47b9c-2eab-4ad5-b7d5-b8be16e1a428}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -57,18 +57,18 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Schema" />
+    <Folder Include="Tables" />
     <Folder Include="Programmability" />
     <Folder Include="Data" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schema\User.sql" />
-    <Build Include="Schema\Card.sql" />
-    <Build Include="Schema\CardType.sql" />
-    <Build Include="Schema\ChallengeIcon.sql" />
-    <Build Include="Schema\CardIcon.sql" />
-    <Build Include="Schema\Deck.sql" />
-    <Build Include="Schema\DeckCard.sql" />
-    <Build Include="Schema\UserProfile.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Card.sql" />
+    <Build Include="Tables\CardType.sql" />
+    <Build Include="Tables\ChallengeIcon.sql" />
+    <Build Include="Tables\CardIcon.sql" />
+    <Build Include="Tables\Deck.sql" />
+    <Build Include="Tables\DeckCard.sql" />
+    <Build Include="Tables\UserProfile.sql" />
   </ItemGroup>
 </Project>
