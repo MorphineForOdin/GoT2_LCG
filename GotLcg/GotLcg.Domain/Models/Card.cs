@@ -4,7 +4,7 @@ using GotLcg.Domain.Enums;
 
 namespace GotLcg.Domain.Models
 {
-    public class Card : DomainModel<Guid>
+    public class Card : DomainModelWithKey<Guid>
     {
         public string Name { get; set; }
 

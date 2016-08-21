@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\CompositeKey.cs" />
     <Compile Include="Base\DomainModel.cs" />
+    <Compile Include="Base\DomainModelWithKey.cs" />
     <Compile Include="Enums\ChallengeIcon.cs" />
     <Compile Include="Enums\CardType.cs" />
     <Compile Include="Models\CardIcon.cs" />

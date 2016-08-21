@@ -2,12 +2,10 @@
 
 namespace GotLcg.Domain.Base
 {
-    public abstract class DomainModel<TId>
+    public abstract class DomainModel
     {
-        public TId Id { get; set; }
+        public virtual DateTime CreatedDate { get; set; }
 
-        public DateTime CreatedDate { get; set; }
-
-        public DateTime ModifiedDate { get; set; }
+        public virtual DateTime ModifiedDate { get; set; }
     }
 }

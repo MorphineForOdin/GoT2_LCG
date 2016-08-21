@@ -3,7 +3,7 @@ using GotLcg.Domain.Base;
 
 namespace GotLcg.Domain.Models
 {
-    public class User : DomainModel<Guid>
+    public class User : DomainModelWithKey<Guid>
     {
         public string Nickname { get; set; }
     }

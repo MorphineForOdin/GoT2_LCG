@@ -4,8 +4,10 @@ using GotLcg.Domain.Enums;
 
 namespace GotLcg.Domain.Models
 {
-    public class CardIcon 
-        : DomainModel<CompositeKey<ChallengeIcon, Guid>>
+    public class CardIcon : DomainModel
     {
+        public Guid CardId { get; set; }
+
+        public ChallengeIcon ChallengeIcon { get; set; }
     }
 }
