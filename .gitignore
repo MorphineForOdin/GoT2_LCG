@@ -2,7 +2,7 @@
 *.pdb
 *.dacpac
 *.suo
-GotLcg/GotLcg.Database.SqlServer/obj/
-GotLcg/GotLcg.Database.SqlServer/bin/
-GotLcg/GotLcg.Domain/obj/
 *.dbmdl
+GotLcg/**/obj/
+GotLcg/**/bin/
+GotLcg/packages/
