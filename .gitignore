@@ -6,3 +6,11 @@ GotLcg/GotLcg.Database.SqlServer/obj/
 GotLcg/GotLcg.Database.SqlServer/bin/
 GotLcg/GotLcg.Domain/obj/
 *.dbmdl
+GotLcg/GotLcg.Web.Api/obj/
+GotLcg/GotLcg.Web.Api/bin/
+GotLcg/GotLcg.Abstraction/obj/
+GotLcg/GotLcg.Common/obj/
+GotLcg/GotLcg.Config/obj/
+GotLcg/GotLcg.Core/obj/
+GotLcg/GotLcg.DataAccess.Ado/obj/
+GotLcg/GotLcg.Logger/obj/
