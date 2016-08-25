@@ -1,90 +1,158 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
 using System.Configuration;
 using System.Threading.Tasks;
 
 namespace GotLcg.Config.Implementation
 {
+    /// <summary>
+    /// Provides wrapper to work with configuration sources like Web.Config or App.Config
+    /// </summary>
+    /// <seealso cref="GotLcg.Config.IConfigProvider" />
     public sealed class FileConfigProvider : IConfigProvider
     {
-        private readonly Lazy<IDictionary<string, string>> _lazyAppSettings;
+        #region Private Fields
 
+        /// <summary>
+        /// The configuration sections cache dictionary.
+        /// </summary>
+        private readonly ConcurrentDictionary<string, IConfigSection> _configSections;
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileConfigProvider"/> class.
+        /// </summary>
         public FileConfigProvider()
         {
-            _lazyAppSettings = new Lazy<IDictionary<string, string>>(
-                   () => new FileConfigSection("appSettings").Settings
-               );
+            _configSections = new ConcurrentDictionary<string, IConfigSection>();
         }
 
+        #endregion
+
+        #region Implementation of IConfigProvider
+
+        /// <summary>
+        /// Gets the database connection string by name.
+        /// </summary>
+        /// <param name="name">The name of connection string setting.</param>
+        /// <returns>
+        /// Connection string value.
+        /// </returns>
         public string GetConnectionString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
 
+        /// <summary>
+        /// Gets the connection string by name in asynchronous manner.
+        /// </summary>
+        /// <param name="name">The name of connection string setting.</param>
+        /// <returns>
+        /// Task of type connection string.
+        /// </returns>
         public Task<string> GetConnectionStringAsync(string name)
         {
             return Task.FromResult(this.GetConnectionString(name));
         }
 
-        public T GetSetting<T>(string key)
+        /// <summary>
+        /// Gets the required configuration setting by key.
+        /// </summary>
+        /// <typeparam name="T">Expected type of the setting.</typeparam>
+        /// <param name="key">The setting key.</param>
+        /// <param name="section">The configuration section.</param>
+        /// <returns>
+        /// Setting casted to T.
+        /// </returns>
+        public T GetSetting<T>(string key, string section = null)
         {
-            return SettingConverter.As<T>(_lazyAppSettings.Value, key);
+            return GetCached(section).GetSetting<T>(key);
         }
 
-        public Task<T> GetSettingAsync<T>(string key)
+        /// <summary>
+        /// Gets the required configuration setting by key in asynchronous way.
+        /// </summary>
+        /// <typeparam name="T">Expected type of the setting.</typeparam>
+        /// <param name="key">The setting key.</param>
+        /// <param name="section">The configuration section.</param>
+        /// <returns>
+        /// Task of setting casted to T.
+        /// </returns>
+        public Task<T> GetSettingAsync<T>(string key, string section = null)
         {
-            return Task.FromResult(this.GetSetting<T>(key));
+            return Task.FromResult(GetSetting<T>(key, section));
         }
 
-        public T GetDefaultOrSetting<T>(string key, T defaultValue = default(T))
+        /// <summary>
+        /// Gets the optional configuration setting by key.
+        /// </summary>
+        /// <typeparam name="T">Expected type of the setting.</typeparam>
+        /// <param name="key">The setting key.</param>
+        /// <param name="defaultValue">Value to return if setting is missing.</param>
+        /// <param name="section">The configuration section.</param>
+        /// <returns>
+        /// Setting casted to T.
+        /// </returns>
+        public T GetDefaultOrSetting<T>(string key, T defaultValue = default(T), string section = null)
         {
-            return SettingConverter.DefaultOrAs(_lazyAppSettings.Value, key, defaultValue);
+            return GetCached(section).GetDefaultOrSetting<T>(key, defaultValue);
         }
 
-        public Task<T> GetDefaultOrSettingAsync<T>(string key, T defaultValue = default(T))
+        /// <summary>
+        /// Gets the optional configuration setting by key with asynchronous approach.
+        /// </summary>
+        /// <typeparam name="T">Expected type of the setting.</typeparam>
+        /// <param name="key">The setting key.</param>
+        /// <param name="defaultValue">Value to return if setting is missing.</param>
+        /// <param name="section">The configuration section.</param>
+        /// <returns>
+        /// Task of setting casted to T.
+        /// </returns>
+        public Task<T> GetDefaultOrSettingAsync<T>(string key, T defaultValue = default(T), string section = null)
         {
-            return Task.FromResult(GetDefaultOrSetting(key, defaultValue));
+            return Task.FromResult(GetDefaultOrSetting(key, defaultValue, section));
         }
 
-        public T GetSetting<T>(string section, string key)
-        {
-            IConfigSection configSection = GetSection(section);
-
-            return SettingConverter.As<T>(configSection.Settings, key);
-        }
-
-        public Task<T> GetSettingAsync<T>(string section, string key)
-        {
-            return Task.FromResult(this.GetSetting<T>(section, key));
-        }
-
-        public Task<T> GetDefaultOrSettingAsync<T>(string section, string key, T defaultValue = default(T))
-        {
-            return Task.FromResult(this.GetDefaultOrSetting(section, key, defaultValue));
-        }
-
-        public T GetDefaultOrSetting<T>(string section, string key, T defaultValue = default(T))
-        {
-            var configSection = GetSection(section);
-
-            if (!configSection.Exists)
-            {
-                return defaultValue;
-            }
-
-            return SettingConverter.As<T>(configSection.Settings, key);
-        }
-
+        /// <summary>
+        /// Gets the configuration section by it's name.
+        /// </summary>
+        /// <param name="section">The section name.</param>
+        /// <returns>
+        /// Instance of configuration section.
+        /// </returns>
         public IConfigSection GetSection(string section)
         {
-            IConfigSection configSection = new FileConfigSection(section);
-
-            return configSection;
+            return GetCached(section);
         }
 
+        /// <summary>
+        /// Gets the configuration section asynchronous.
+        /// </summary>
+        /// <param name="section">The section name.</param>
+        /// <returns>
+        /// Task of configuration section.
+        /// </returns>
         public Task<IConfigSection> GetSectionAsync(string section)
         {
             return Task.FromResult(GetSection(section));
         }
+
+        #endregion
+
+        #region Private Methods
+
+        /// <summary>
+        /// Gets cached section or adds new to the cache.
+        /// </summary>
+        /// <param name="section">The section name.</param>
+        /// <returns>Cached or new section.</returns>
+        private IConfigSection GetCached(string section)
+        {
+            return _configSections.GetOrAdd(section ?? "appSettings", GetSection);
+        }
+
+        #endregion
     }
 }
