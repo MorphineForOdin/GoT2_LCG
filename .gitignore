@@ -5,5 +5,5 @@
 */*/obj/
 */*/bin/
 *.dbmdl
-GotLcg/packages
-GotLcg/.vs
+GotLcg/packages/
+GotLcg/.vs/
