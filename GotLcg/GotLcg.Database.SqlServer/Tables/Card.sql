@@ -3,11 +3,11 @@
 	[Id] UNIQUEIDENTIFIER NOT NULL, 
     [Name] NVARCHAR(50) NOT NULL, 
     [Cost] INT NOT NULL, 
-    [Strength] INT NOT NULL , 
-    [Amount] INT NOT NULL CONSTRAINT [DEF_Card_Amount] DEFAULT 1, 
+    [Strength] INT NOT NULL, 
+    [AmountLimitation] INT NOT NULL CONSTRAINT [DC_Card_Amount] DEFAULT 3, 
     [CardTypeId] INT NOT NULL, 
-    [CreatedDate] DATETIME2 NOT NULL CONSTRAINT [DEF_Card_CreatedDate] DEFAULT GETUTCDATE(), 
-    [ModifiedDate] DATETIME2 NOT NULL CONSTRAINT [DEF_Card_ModifiedDate] DEFAULT GETUTCDATE(),
+    [CreatedDate] DATETIME2 NOT NULL CONSTRAINT [DC_Card_CreatedDate] DEFAULT GETUTCDATE(), 
+    [ModifiedDate] DATETIME2 NOT NULL CONSTRAINT [DC_Card_ModifiedDate] DEFAULT GETUTCDATE(),
 	CONSTRAINT [PK_Card] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Card_CardType] FOREIGN KEY ([CardTypeId]) REFERENCES [CardType]([Id]) 
-)
+);

@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{52d47b9c-2eab-4ad5-b7d5-b8be16e1a428}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -60,6 +60,7 @@
     <Folder Include="Tables" />
     <Folder Include="Programmability" />
     <Folder Include="Data" />
+    <Folder Include="Data\BootstrapData" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\User.sql" />
@@ -70,5 +71,10 @@
     <Build Include="Tables\Deck.sql" />
     <Build Include="Tables\DeckCard.sql" />
     <Build Include="Tables\UserProfile.sql" />
+    <PostDeploy Include="Data\PostDeploymentScript.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\BootstrapData\DATA_CardType.sql" />
+    <None Include="Data\BootstrapData\DATA_ChallengeIcon.sql" />
   </ItemGroup>
 </Project>
