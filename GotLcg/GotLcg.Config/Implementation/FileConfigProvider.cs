@@ -150,7 +150,7 @@ namespace GotLcg.Config.Implementation
         /// <returns>Cached or new section.</returns>
         private IConfigSection GetCached(string section)
         {
-            return _configSections.GetOrAdd(section ?? "appSettings", GetSection);
+            return _configSections.GetOrAdd(section ?? "appSettings", s => new FileConfigSection(s));
         }
 
         #endregion
