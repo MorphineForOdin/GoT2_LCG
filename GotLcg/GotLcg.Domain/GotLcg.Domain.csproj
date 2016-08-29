@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\DomainModel.cs" />
-    <Compile Include="Base\DomainModelWithKey.cs" />
+    <Compile Include="Base\Entity.cs" />
+    <Compile Include="Base\EntityWithKey.cs" />
+    <Compile Include="Base\IEntity.cs" />
+    <Compile Include="Base\IEntityWithKey.cs" />
     <Compile Include="Enums\ChallengeIcon.cs" />
     <Compile Include="Enums\CardType.cs" />
     <Compile Include="Models\CardIcon.cs" />
@@ -52,7 +54,6 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

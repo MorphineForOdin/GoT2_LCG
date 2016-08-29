@@ -3,12 +3,24 @@ using GotLcg.Domain.Base;
 
 namespace GotLcg.Domain.Models
 {
-    public class DeckCard : DomainModel
+    /// <summary>
+    /// POCO model that couples cards with user deck.
+    /// </summary>
+    public class DeckCard : Entity
     {
+        /// <summary>
+        /// Deck identifier.
+        /// </summary>
         public Guid DeckId { get; set; }
 
+        /// <summary>
+        /// Card identifier.
+        /// </summary>
         public Guid CardId { get; set; }
 
-        public int Amount { get; set; }
+        /// <summary>
+        /// Amount of card copies in current deck.
+        /// </summary>
+        public int CardAmount { get; set; }
     }
 }

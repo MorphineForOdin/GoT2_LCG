@@ -2,6 +2,6 @@
 {
     public enum ChallengeIcon
     {
-        //TODO: populate the emun after database bootstrap data
+        // TODO: populate the emun after database bootstrap data
     }
 }

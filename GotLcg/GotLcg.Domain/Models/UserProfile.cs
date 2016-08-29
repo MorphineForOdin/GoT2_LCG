@@ -3,8 +3,11 @@ using GotLcg.Domain.Base;
 
 namespace GotLcg.Domain.Models
 {
-    public class UserProfile : DomainModelWithKey<Guid>
+    /// <summary>
+    /// POCO model that describes user's profile data.
+    /// </summary>
+    public class UserProfile : EntityWithKey<Guid>
     {
-        //TODO: Add user's optional properties here
+        // TODO: Add user's optional properties here
     }
 }

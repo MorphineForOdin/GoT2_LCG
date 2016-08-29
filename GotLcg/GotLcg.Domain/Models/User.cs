@@ -3,8 +3,14 @@ using GotLcg.Domain.Base;
 
 namespace GotLcg.Domain.Models
 {
-    public class User : DomainModelWithKey<Guid>
+    /// <summary>
+    /// POCO model that describes user entity.
+    /// </summary>
+    public class User : EntityWithKey<Guid>
     {
+        /// <summary>
+        /// User's nickname.
+        /// </summary>
         public string Nickname { get; set; }
     }
 }
