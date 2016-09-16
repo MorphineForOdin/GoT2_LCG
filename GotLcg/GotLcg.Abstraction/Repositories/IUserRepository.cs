@@ -1,6 +1,7 @@
 ﻿using GotLcg.Abstraction.Repositories.Base;
 using GotLcg.Domain.Models;
 using System;
+using System.Threading.Tasks;
 
 namespace GotLcg.Abstraction.Repositories
 {
@@ -10,5 +11,8 @@ namespace GotLcg.Abstraction.Repositories
     public interface IUserRepository
         : IRepositoryWithKey<User, Guid>
     {
+        User GetByNickname(string nickname);
+
+        Task<User> GetByNicknameAsync(string nickname);
     }
 }

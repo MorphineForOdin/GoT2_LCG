@@ -1,4 +1,5 @@
-﻿using GotLcg.Domain.Base;
+﻿using System.Threading.Tasks;
+using GotLcg.Domain.Base;
 
 namespace GotLcg.Abstraction.Repositories.Base
 {
@@ -16,6 +17,13 @@ namespace GotLcg.Abstraction.Repositories.Base
         /// </summary>
         /// <param name="key">Identifier to search.</param>
         /// <returns>Entity object.</returns>
+        Task<TEntity> GetAsync(TKey key);
+
+        /// <summary>
+        /// Return entity with specific key or throws exception if not found.
+        /// </summary>
+        /// <param name="key">Identifier to search.</param>
+        /// <returns>Entity object.</returns>
         TEntity Get(TKey key);
 
         /// <summary>
@@ -23,6 +31,25 @@ namespace GotLcg.Abstraction.Repositories.Base
         /// </summary>
         /// <param name="key">Identifier to search.</param>
         /// <returns>Entity object or <code>null</code>.</returns>
+        Task<TEntity> GetOrNullAsync(TKey key);
+
+        /// <summary>
+        /// Return entity with specific key or <code>null</code> if not found.
+        /// </summary>
+        /// <param name="key">Identifier to search.</param>
+        /// <returns>Entity object or <code>null</code>.</returns>
         TEntity GetOrNull(TKey key);
+
+        /// <summary>
+        /// Removes entity with specific key or <code>null</code> if not found.
+        /// </summary>
+        /// <param name="key">Identifier to search.</param>
+        Task DeleteAsync(TKey key);
+
+        /// <summary>
+        /// Removes entity with specific key or <code>null</code> if not found.
+        /// </summary>
+        /// <param name="key">Identifier to search.</param>
+        void Delete(TKey key);
     }
 }

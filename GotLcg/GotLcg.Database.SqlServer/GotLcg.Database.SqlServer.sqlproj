@@ -61,6 +61,8 @@
     <Folder Include="Programmability" />
     <Folder Include="Data" />
     <Folder Include="Data\BootstrapData" />
+    <Folder Include="Programmability\StoredProcedures" />
+    <Folder Include="Programmability\StoredProcedures\User" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\User.sql" />
@@ -72,6 +74,12 @@
     <Build Include="Tables\DeckCard.sql" />
     <Build Include="Tables\UserProfile.sql" />
     <PostDeploy Include="Data\PostDeploymentScript.sql" />
+    <Build Include="Programmability\StoredProcedures\User\SP_User_Insert.sql" />
+    <Build Include="Programmability\StoredProcedures\User\SP_User_Update.sql" />
+    <Build Include="Programmability\StoredProcedures\User\SP_User_Get.sql" />
+    <Build Include="Programmability\StoredProcedures\User\SP_User_Delete.sql" />
+    <Build Include="Programmability\StoredProcedures\User\SP_User_GetAll.sql" />
+    <Build Include="Programmability\StoredProcedures\User\SP_User_GetByNickname.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\BootstrapData\DATA_CardType.sql" />

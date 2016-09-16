@@ -11,7 +11,7 @@
         /// <summary>
         /// Entity identifier.
         /// </summary>
-        public virtual TKey Id { get; protected set; }
+        public virtual TKey Id { get; set; }
 
         #endregion
     }

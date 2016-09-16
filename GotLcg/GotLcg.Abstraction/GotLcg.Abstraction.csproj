@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Base\IRepositoryFacade.cs" />
+    <Compile Include="Repositories\Base\IUnitOfWork.cs" />
+    <Compile Include="Repositories\Base\IUnitOfWorkFactory.cs" />
     <Compile Include="Repositories\IDeckCardRepository.cs" />
     <Compile Include="Repositories\IDeckRepository.cs" />
     <Compile Include="Repositories\Base\IRepository.cs" />
