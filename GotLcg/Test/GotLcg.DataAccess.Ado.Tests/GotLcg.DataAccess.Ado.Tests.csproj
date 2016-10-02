@@ -72,15 +72,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GotLcg.Abstraction\GotLcg.Abstraction.csproj">
+    <ProjectReference Include="..\..\GotLcg.Abstraction\GotLcg.Abstraction.csproj">
       <Project>{463ddf42-56e6-41df-8b79-c6a76c76165d}</Project>
       <Name>GotLcg.Abstraction</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GotLcg.DataAccess.Ado\GotLcg.DataAccess.Ado.csproj">
+    <ProjectReference Include="..\..\GotLcg.DataAccess.Ado\GotLcg.DataAccess.Ado.csproj">
       <Project>{c4fa5aa1-113f-47d7-bbe2-7225b8395fef}</Project>
       <Name>GotLcg.DataAccess.Ado</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GotLcg.Domain\GotLcg.Domain.csproj">
+    <ProjectReference Include="..\..\GotLcg.Domain\GotLcg.Domain.csproj">
       <Project>{513BD0EA-232D-4088-993B-EB0D0C46BE3F}</Project>
       <Name>GotLcg.Domain</Name>
     </ProjectReference>

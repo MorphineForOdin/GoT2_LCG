@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Configuration;
 using FluentAssertions;
-using GotLcg.Config.Implementation;
 using Xunit;
+using GotLcg.Config.Implementation;
 
 namespace GotLcg.Config.Tests
 {

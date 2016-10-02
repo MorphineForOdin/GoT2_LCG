@@ -4,6 +4,8 @@
 *.suo
 */*/obj/
 */*/bin/
+*/*/*/obj/
+*/*/*/bin/
 *.dbmdl
 GotLcg/packages/
 GotLcg/.vs/

@@ -73,8 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GotLcg.Config\GotLcg.Config.csproj">
-      <Project>{5A974821-07B1-43DB-9B45-BB5781F478A3}</Project>
+    <ProjectReference Include="..\..\GotLcg.Config\GotLcg.Config.csproj">
+      <Project>{afb36488-6c47-4f27-ab03-7a96f3e3252f}</Project>
       <Name>GotLcg.Config</Name>
     </ProjectReference>
   </ItemGroup>
