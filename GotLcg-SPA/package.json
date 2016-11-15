@@ -1,0 +1,27 @@
+{
+  "name": "got-lcg",
+  "version": "1.0.0",
+  "description": "Game of Thrones - Living Card Game, Second Edition",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MorphineForOdin/GoT2_LCG.git"
+  },
+  "author": "Igor",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.4"
+  }
+}
