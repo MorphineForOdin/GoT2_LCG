@@ -41,7 +41,6 @@ namespace GotLcg.DataAccess.Ado.Exceptions
             : base(info, context)
 
         {
-
         }
     }
 }

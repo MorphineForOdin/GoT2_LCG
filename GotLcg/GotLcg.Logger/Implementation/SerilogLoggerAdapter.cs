@@ -22,21 +22,23 @@ namespace GotLcg.Logger.Implementation
         /// <summary>
         /// Constructor that initialize logger to save logs in file.
         /// </summary>
-        /// <param name="filePath">Log file path.</param>
-        public SerilogLoggerAdapter(string filePath)
+        /// <param name="logFilesPath">Path to log files location.</param>
+        public SerilogLoggerAdapter(string logFilesPath)
         {
             _logger = new LoggerConfiguration()
-                .WriteTo.RollingFile("log-{Date}.txt")
+                .MinimumLevel.Debug()
+                .WriteTo.RollingFile(
+                    pathFormat: logFilesPath,
+                    outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level}] {Message}{NewLine}{Exception}{NewLine}")
                 .CreateLogger();
         }
 
         /// <summary>
-        /// Initialize logger adapter with existing configured logger.
+        /// TODO: This implementation will be used for configurable logging soon!
         /// </summary>
-        /// <param name="logger"><see cref="ILogger"/> implementation instance.</param>
-        public SerilogLoggerAdapter(ILogger logger)
+        public SerilogLoggerAdapter()
         {
-            _logger = logger;
+            _logger = null;
         }
 
         #endregion

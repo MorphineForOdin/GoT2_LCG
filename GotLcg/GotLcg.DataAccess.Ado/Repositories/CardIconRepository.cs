@@ -13,7 +13,6 @@ namespace GotLcg.DataAccess.Ado.Repositories
         public CardIconRepository(IDbConnection connection, IMapperBootstrap mapperBootstrap)
             : base(connection, mapperBootstrap)
         {
-
         }
     }
 }

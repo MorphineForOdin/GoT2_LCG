@@ -6,7 +6,7 @@
     public enum CardType
     {
         /// <summary>
-        /// Faction card (Starks, Lannister, etc.).
+        /// Faction card (Starks, Lannister, etc..).
         /// </summary>
         Faction = 1,
 

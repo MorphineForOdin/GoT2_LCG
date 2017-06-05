@@ -9,3 +9,4 @@
 *.dbmdl
 GotLcg/packages/
 GotLcg/.vs/
+GotLcg/GotLcg.Web.Api/Logs

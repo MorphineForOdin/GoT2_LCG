@@ -3,7 +3,7 @@
 	CREATED DATE:	9/14/2016
 	CREATED BY:		IGOR BURKOVYCH
 	DESCRIPTION:	Deletes record from User table.
-	========================================================================================
+	=======================================================================================
 	MODIFIED DATE:	
 	MODIFIED BY:	
 	DESCRIPTION:	
