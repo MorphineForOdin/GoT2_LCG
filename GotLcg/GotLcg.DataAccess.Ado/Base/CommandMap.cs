@@ -24,7 +24,7 @@ namespace GotLcg.DataAccess.Ado.Base
         {
             get
             {
-                var args = new DynamicParameters(new { });
+                var args = new DynamicParameters(new {});
 
                 foreach (var commandParam in CommandParams)
                 {

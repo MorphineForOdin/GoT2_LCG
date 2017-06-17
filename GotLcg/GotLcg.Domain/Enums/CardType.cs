@@ -6,14 +6,14 @@
     public enum CardType
     {
         /// <summary>
-        /// Faction card (Starks, Lannister, etc..).
-        /// </summary>
-        Faction = 1,
-
-        /// <summary>
         /// Agenda card, contains general strategy for the game.
         /// </summary>
-        Agenda,
+        Agenda = 1,
+
+        /// <summary>
+        /// Faction card (Starks, Lannister, etc..).
+        /// </summary>
+        Faction,
 
         /// <summary>
         /// Plot card that specify strategy for one round.

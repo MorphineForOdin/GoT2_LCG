@@ -10,7 +10,7 @@ namespace GotLcg.DataAccess.Ado.Base
     /// <summary>
     /// Place to initialize all registered repository properties.
     /// </summary>
-    /// <seealso cref="GotLcg.Abstraction.Repositories.Base.IRepositoryFacade" />
+    /// <seealso cref="IRepositoryFacade" />
     public class RepositoryFacade : IRepositoryFacade
     {
         #region Private Fields

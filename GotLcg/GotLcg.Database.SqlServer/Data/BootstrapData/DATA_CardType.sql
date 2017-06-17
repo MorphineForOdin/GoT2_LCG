@@ -7,8 +7,8 @@ DECLARE @cardTypeData AS TABLE
 );
 
 INSERT INTO @cardTypeData ([Id], [Name]) VALUES
-	(1, 'Faction'),
-	(2, 'Agenda'),
+	(1, 'Agenda'),
+	(2, 'Faction'),
 	(3, 'Plot'),
 	(4, 'Character'),
 	(5, 'Location'),

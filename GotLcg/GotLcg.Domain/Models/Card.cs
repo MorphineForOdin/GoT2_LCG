@@ -25,6 +25,11 @@ namespace GotLcg.Domain.Models
         public int Strength { get; set; }
 
         /// <summary>
+        /// Determines if card is loyal to it's faction or not.
+        /// </summary>
+        public bool IsLoyal { get; set; }
+
+        /// <summary>
         /// Amount of current card copies that can be included in play deck.
         /// </summary>
         public int AmountLimitation { get; set; }

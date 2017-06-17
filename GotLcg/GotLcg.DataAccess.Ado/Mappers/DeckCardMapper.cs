@@ -1,5 +1,4 @@
-﻿using System;
-using GotLcg.DataAccess.Ado.Base;
+﻿using GotLcg.DataAccess.Ado.Base;
 using GotLcg.Domain.Models;
 
 namespace GotLcg.DataAccess.Ado.Mappers

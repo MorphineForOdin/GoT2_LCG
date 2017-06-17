@@ -4,19 +4,24 @@ namespace GotLcg.Common.Extensions
 {
     public static class StringExtensions
     {
-        public static string RemoveSuffix(this string str, string suffix)
+        public static string RemoveSuffix(this string source, string suffix)
         {
-            if (str == null)
+            if (source == null)
             {
-                throw new ArgumentNullException(nameof(str));
+                throw new ArgumentNullException(nameof(source));
             }
 
-            if (str.EndsWith(suffix))
+            if (suffix == null)
             {
-                return str.Substring(0, str.Length - suffix.Length);
+                throw new ArgumentNullException(nameof(suffix));
             }
 
-            return str;
+            if (source.EndsWith(suffix))
+            {
+                return source.Substring(0, source.Length - suffix.Length);
+            }
+
+            return source;
         }
     }
 }
