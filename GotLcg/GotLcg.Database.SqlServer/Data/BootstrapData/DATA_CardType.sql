@@ -2,7 +2,7 @@
 
 DECLARE @cardTypeData AS TABLE
 (
-	[Id] INT NOT NULL,
+	[Id] TINYINT NOT NULL,
 	[Name] NVARCHAR(10) NOT NULL
 );
 

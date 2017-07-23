@@ -3,7 +3,7 @@
     /// <summary>
     /// Defines different card types.
     /// </summary>
-    public enum CardType
+    public enum CardType : byte
     {
         /// <summary>
         /// Agenda card, contains general strategy for the game.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Defines different challenge icon types.
     /// </summary>
-    public enum ChallengeIcon
+    public enum ChallengeIcon : byte
     {
         /// <summary>
         /// Military challenge with the goal  to kill an opponent’s characters.

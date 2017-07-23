@@ -6,7 +6,7 @@
     [Strength] INT NOT NULL,
 	[IsLoyal] BIT NOT NULL CONSTRAINT [DC_Card_IsLoyal] DEFAULT 0,
     [AmountLimitation] INT NOT NULL CONSTRAINT [DC_Card_Amount] DEFAULT 3,
-    [CardTypeId] INT NOT NULL,
+    [CardTypeId] TINYINT NOT NULL,
     [CreatedDate] DATETIME2 NOT NULL CONSTRAINT [DC_Card_CreatedDate] DEFAULT GETUTCDATE(),
     [ModifiedDate] DATETIME2 NOT NULL CONSTRAINT [DC_Card_ModifiedDate] DEFAULT GETUTCDATE(),
 	CONSTRAINT [PK_Card] PRIMARY KEY CLUSTERED ([Id] ASC),
