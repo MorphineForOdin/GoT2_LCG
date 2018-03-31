@@ -1,0 +1,12 @@
+*.dll
+*.pdb
+*.dacpac
+*.suo
+*/*/obj/
+*/*/bin/
+*/*/*/obj/
+*/*/*/bin/
+*.dbmdl
+GotLcg/packages/
+GotLcg/.vs/
+GotLcg/GotLcg.Web.Api/Logs
